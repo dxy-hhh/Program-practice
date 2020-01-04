@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小米注册</title>
+  <style>
+    /* CSS reset */
+    /* CSS reset start */
+    body{
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    p{
+      margin: 0;
+    }
+
+    h4{
+      margin: 0;
+    }
+
+    a{
+      /* 去掉下划线 */
+      text-decoration: none;
+    }
+
+    /* 去掉小圆点 */
+    ul{
+      padding: 0;
+      margin: 0;
+    }
+
+    li{
+      list-style: none;
+    }
+    /* CSS reset end */
+
+    .container{
+      width: 854px;
+      height: 500px;
+      margin: 0 auto;
+      margin-top: 100px;
+      /* 上0 左右34 下30 */
+      padding: 0 34px 30px;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+    /* top-logo start */
+    .container .top-logo{
+      padding: 0 0 40px;
+    }
+
+    .container .top-logo a{
+      width: 49px;
+      height: 48px;
+      background-image: url(https://account.xiaomi.com/static/res/28f08d0/account-static/respassport/acc-2014/img/milogo.png);
+      display: block;
+      /* 改变图标样式 ,改成默认箭头default*/
+      cursor: default;
+      margin: 0 auto;
+    }
+    /* top-logo end */
+
+    /* register-info start */
+    .container .register-info h4{
+      font-size: 30px;
+      font-weight: normal;
+      /* 文本对齐方式 */
+      text-align: center;
+    }
+    /* register-info end */
+
+    /* register-form start */
+    /* CSS中有些样式可以继承比如font-size */
+    .container .register-form{
+      font-size: 14px;
+      width: 332px;
+      padding: 30px 0;
+      margin: 0 auto;
+    }
+
+    .register-form h4{
+      font-weight: normal;
+      padding: 0 0 5px;
+      color: #333;
+    }
+
+    .register-form .select-regions .sr-box{
+      height: 40px;
+      padding-left: 14px;
+      line-height: 40px;
+      border: 1px solid #e8e8e8;
+      color: #555;
+    }
+
+    .register-form .sr-box p{
+      float: left;
+      width: 275px;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .register-form .sr-box i{
+      width: 16px;
+      height: 16px;
+      background-image: url(./icon_user.png);
+      display: block;
+      /* 想要两个块元素占一行，可以用定位或者浮动 */
+      float: left;
+      margin: 11px 12px 0;
+    }
+
+    .container .region_tip_text{
+      margin: -10px 0 15px 0;
+      color: #666;
+    }
+
+    /* 组合选择器 选择器,选择器 */
+    .register-form .select-regions,.register-form .select-cycode{
+      padding-bottom: 15px;
+    }
+
+    /* .register-form .select-cycode .listwrap{
+      color: #555;
+      width: 74px;
+      height: 40px;
+      border: 1px solid #e8e8e8;
+    }
+
+    .select-cycode .listwrap .display_box{
+      padding: 0 9px;
+    }
+
+    .register-form .select-cycode input{
+      height: 20px;
+      display: inline-block;
+      line-height: 20px;
+      font-size: 100%;
+      border: 1px solid #e8e8e8;
+      padding: 10px;
+      width: 236px;
+    } */
+
+    .register-form .select-cycode .sc-box{
+      height: 40px;
+      border: 1px solid #e8e8e8;
+    }
+    /* 浮动要两者加起来的和小于等于父亲宽度 */
+    .select-cycode .sc-box .scb-left{
+      height: 40px;
+      float: left;
+      width: 54px;
+      padding: 0 9px;
+      border-right: 1px solid #e8e8e8;
+    }
+
+    .select-cycode .scb-left .icon-arrow{
+      border-width: 5px;
+      border-color: #9d9d9d transparent transparent transparent;
+      border-style: solid;
+      display: inline-block;
+      line-height: 10px; 
+      margin-left: 10px; 
+    }
+
+    .select-cycode .scb-left p{
+      color: #555;
+      line-height: 40px;
+      display: inline-block; 
+    }
+
+    .select-cycode .sc-box .scb-right{
+      height: 20px;
+      float: left;
+      width: 236px;
+      padding: 10px;
+    }
+
+    .select-cycode .scb-right input{
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 100%;
+      border: 0;
+      /* 删除点击变蓝的框 */
+      outline: none;
+    }
+
+    .register-form .submit-btn input{
+      margin-top: 15px;
+      display: block;
+      width: 330px;
+      height: 42px;
+      background-color: #ff6700;
+      color: #fff;
+      /* a的值代表透明度，1是一点都不透明 0是完全看不见 */
+      border: 1px solid rgba(186,186,186,0.3);
+      font-size: 14px;
+      outline: none;
+    }
+    /* register-form end */
+
+    /* register-msg start */
+    .re-msgbox{
+      padding: 40px 0 0;
+    }
+    .register-msg{
+      font-size: 14px;
+      text-align: center;
+      color: #9d9d9d;
+    }
+    .register-msg a{
+      color: #333333;
+      font-weight: bold;
+    }
+
+    /* register-msg end */
+
+    /* footer start */
+    .footer{
+      font-size: 14px;
+    }
+
+    /* ul中的li已经是行内块元素具备一些行元素的特性，所以说可以用text-align */
+    /* text-align文本行元素才可以 */
+    .footer .link-area ul{
+      text-align: center;
+    }
+
+    .footer .link-area li{
+      display: inline-block;
+      border-right: 1.5px solid #9d9d9d;
+    }
+
+    .footer .link-area li:nth-child(4){
+      border: 0;
+    }
+
+    .footer li:nth-child(1) a{
+      color: #333;
+    }
+
+    .footer li a{
+      padding: 0 10px;
+      color: #757575;
+    }
+
+    .footer li a:hover{
+      color: #333;
+    }
+
+    .footer .intro{
+      color: #9d9d9d;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .footer .intro a{
+      color: #9d9d9d;
+    }
+
+    /* footer end */
+  </style>
+</head>
+
+<body>
+  <!-- 主区域命名container -->
+  <div class="container">
+    <div class="top-logo">
+      <!-- 虽然用a标签但不想刷新和跳转加javascript:void(0) -->
+      <!-- 改变，当鼠标指向图标的时候不想要小手样式 -->
+      <a href="javascript:void(0)"></a>
+    </div>
+    <div class="register-info">
+      <h4>注册小米账号</h4>
+    </div>
+    <div class="register-form">
+      <h4>国家/地区</h4>
+      <div class="select-regions">
+        <div class="sr-box">
+          <p>中国</p>
+          <!-- 布局中经常能看见小图片，页面中要用小图标一般用i标签 -->
+          <i></i>
+        </div>
+      </div>
+      <div class="region_tip_text">
+        成功注册账号后，国家/地区将不能被修改
+      </div>
+      <h4>手机号码</h4>
+      <div class="select-cycode">
+        <!-- <div class="listwrap">
+          <div class="display_box">
+            <p></p>
+            <i></i>
+          </div>
+        </div>
+        <div>
+          <input type="text">
+        </div> -->
+        <div class="sc-box">
+          <div class="scb-left">
+            <p>+86</p>
+            <i class="icon-arrow"></i>
+          </div>
+          <div class="scb-right">
+            <!-- 占位符 -->
+            <input type="text" placeholder="请输入手机号码">
+          </div>
+        </div>
+      </div>
+      <div class="submit-btn">
+        <!-- 两种按钮方式 input button -->
+        <!-- <button>按钮</button> -->
+        <input type="submit" value="立即注册">
+      </div>
+    </div>
+    <div class="re-msgbox">
+      <div class="register-msg">
+        已阅读并同意：小米
+        <a href="javascript:void(0)">用户协议</a>
+        和 
+        <a href="javascript:void(0)">隐私政策</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- 导航，功能按钮，同一行展示的功能相同的一般用列表展示 -->
+    <div class="link-area">
+      <ul>
+        <li><a href="javascript:void(0)">简体</a></li>
+        <li><a href="javascript:void(0)">繁体</a></li>
+        <li><a href="javascript:void(0)">English</a></li>
+        <li><a href="javascript:void(0)">常见问题</a></li>
+      </ul>
+    </div>
+    <div class="intro">
+      <span>小米公司版权所有-京ICP备10046444-<a target="_blank" href="javascript:void(0)"><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png">京公网安备11010802020134号</a>-京ICP证110507号</span>
+    </div>
+  </div>
+</body>
+</html>

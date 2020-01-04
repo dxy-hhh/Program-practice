@@ -1,0 +1,595 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+.container{
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.clearfix::before{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+/* topbar start */
+.topbar{
+  height: 40px;
+  background-color: #333;
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.topbar .container{
+  width: 1226px;
+  margin: 0 auto;
+}
+
+.topbar .topbar-left{
+  color: #424242;
+  float: left;
+}
+
+.topbar a{
+  color: #b0b0b0;
+}
+
+.topbar a:hover{
+  color: #fff;
+}
+
+.topbar .topbar-right{
+  float: right;
+  color: #424242;
+}
+
+.topbar .topbar-right .topbar-cart{
+  color: #b0b0b0;
+  width: 120px;
+  background-color: #424242;
+  text-align: center;
+  margin-left: 15px;
+  font-size: 12px;
+  height: 40px;
+}
+
+.topbar .user-info,.topbar-right .topbar-cart{
+  display: inline-block;
+}
+
+.topbar .topbar-right .icon-gouwuche{
+  margin-right: 5px;
+}
+.topbar .topbar-left .app{
+  position: relative;
+}
+.topbar .topbar-left .appcode{
+  position: absolute;
+  line-height: normal;
+  background-color: #fff;
+  text-align: center;
+  width: 124px;
+  /* 这里为什么不是40px????????? */
+  top: 28px;
+  left: 50%;
+  margin-left: -62px;
+  box-shadow: 0px 1px 5px rgba(43, 24, 24, 0.15);
+  /* display: none; */
+  height: 0px;
+  transition: height 1s ease;
+  overflow: hidden;
+}
+.topbar .topbar-left img{
+  margin: 18px auto 0;
+}
+.topbar .appcode p{
+  color: #747474;
+  line-height: normal;
+  font-size: 14px;
+  padding: 0 0 10px 0;
+}
+
+.topbar .triangle{
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  width: 0;
+  left: 50%;
+  top: 10px;
+  margin-left: -10px;
+  display: none;
+}
+
+.topbar .app:hover .appcode{
+  /* display: block; */
+  height: 150px;
+}
+
+.topbar .app:hover .triangle{
+  display: block;
+}
+
+/* topbar ends */
+
+
+
+
+/* header start */
+.header{
+  position: relative;
+}
+
+.header .header-logo,.header .header-nav,.header .header-search{
+  float: left;
+} 
+
+.header .header-logo{
+  width: 62px;
+  /* margin-top: 22px; */
+}
+
+.header .header-nav{
+  width: 850px;
+  height: 40px;
+  /* background-color: blue; */
+}
+
+.header .header-search{
+  width: 296px;
+  height: 40px;
+  float: right;
+  margin-right: 2px;
+  /* background-color: green; */
+}
+
+.header .hl-content{
+  position: relative;
+  width: 55px;
+  height: 55px;
+  background-color: #ff6700;
+  margin-top: 22px;
+  overflow: hidden;
+}
+
+.header .hl-content::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55px;
+  height: 55px;
+  content: "";
+  background-image: url(./mi-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  transition: all .1s ease;
+}
+
+.header .hl-content::before{
+  position: absolute;
+  left: -55px;
+  top: 0;
+  content: "";
+  display: block;
+  width: 55px;
+  height: 55px;
+  background-image: url(./mi-home.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .3s ease;
+}
+
+.header .header-logo:hover .hl-content::before{
+  left: 0;
+}
+
+.header .header-logo:hover .hl-content::after{
+  left: 55px;
+}
+
+.header .header-nav ul{
+  height: 88px;
+  padding: 12px 0 0 30px;
+  margin-left: 50px;
+}
+
+.header .header-nav li{
+  list-style: none;
+  display: inline-block;
+  padding: 26px 10px 38px;
+  color: #333;
+  font-size: 16px;
+}
+
+.header .header-search .form-bar{
+  position: relative;
+  width: 296px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  margin-top: 25px;
+}
+
+.header .header-search .fb-input{
+  display: inline-block;
+  width: 245px;
+  border-right: 1px solid #e0e0e0;
+  height: 50px;
+}
+
+.header .fb-input input{
+  border: 0;
+  outline: none;
+  height: 48px;
+  padding: 0 10px;
+  line-height: 48px;
+}
+
+.header .fb-input .input-text{
+  position: absolute;
+  top: 13px;
+  left: 80px;
+}
+
+.header .input-text span{
+  margin-left: 5px;
+  padding: 0 5px;
+  font-size: 12px;
+  background-color: #eee;
+  color: #757575;
+  transition: all .5s ease;
+}
+
+.header .input-text span:hover{
+  background-color: #ff6700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header .header-search .fb-btn{
+  display: inline-block;
+  height: 50px;
+  margin-left: 12px;
+}
+
+.header .fb-btn i{
+  position: relative;
+  top: 3px;
+  color: #666;
+  font-weight: bold;
+}
+
+.header .nav-menu{
+  position: absolute;
+  height: 0;
+  width: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 3px 4px rgba(0,0,0,.18);
+  z-index: 100;
+}
+
+
+.header .nb-list{
+  /* margin: 0 auto只能设置在正常文档流中的内容 */
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  z-index: 101;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header .nb-list li{
+  visibility: hidden;
+  display: inline-block;
+  list-style: none;
+  height: 100px;
+  width: 80px;
+  background-color: yellow;
+}
+
+.header .nav-bar > li:hover .nb-list li{
+  visibility: visible;
+}
+
+.header .nav-bar li:nth-child(2) .nb-list li{
+  background-color: blue;
+}
+
+.header .nav-bar:hover + .nav-menu{
+  height: 229px;
+  border-top: 1px solid #e0e0e0;
+}
+.header .nav-menu{
+  transition: height .3s ease;
+}
+/* header end */
+
+/* swiper-bar start */
+/* 定位脱离文档流不能用clearfix clearfix只能清除浮动脱离文档流 */
+.swiper-bar .container{
+  position: relative;
+  height: 460px;
+  margin-top: 25px;
+}
+
+.swiper-bar .set-category{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 234px;
+  height: 460px;
+  background-color: rgba(105, 101, 101, .6);
+  z-index: 10;
+}
+
+.swiper-bar .set-category ul{
+  padding: 20px 0;
+}
+
+.swiper-bar .set-category li{
+  position: relative;
+  height: 42px;
+  padding-left: 30px;
+  line-height: 42px;
+  color: #fff;
+}
+
+.swiper-bar .set-category li:hover{
+  background-color: #ff6700;
+  cursor: pointer;
+}
+
+.swiper-bar .set-category li i{
+  position: absolute;
+  right: 10px;
+}
+
+.swiper-bar .swiper-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1226px;
+  height: 460px;
+  /* background-color: blue; */
+}
+
+
+/* swiper-bar end */
+
+
+/* hero-sub start */
+.hero-sub{
+  margin-top: 14px;
+  margin-bottom: 26px;
+}
+.hero-sub .hs-left{
+  float: left;
+  width: 234px;
+  height: 170px;
+  background-color: #5f5750;
+  overflow: hidden;
+}
+.hero-sub .hs-left li{
+  float: left;
+  width: 70px;
+  height: 82px;
+  padding: 0 3px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+}
+/* 用来实现上面的横线 */
+.hero-sub .hs-left li::before{
+  position: absolute;
+  background-color: #665e57;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 64px;
+  top: -1px;
+  left: 6px;
+}
+/* 用来实现右面的横线 */
+.hero-sub .hs-left li::after{
+  position: absolute;
+  background-color: #665e57;
+  content: "";
+  display: block;
+  height: 70px;
+  width: 1px;
+  top: 6px;
+  left: 0px; 
+}
+.hero-sub .hs-left li div{
+  padding-top: 18px;
+}
+
+.hero-sub .hs-left li i{
+  display: block;
+  font-size: 24px;
+  margin: 0 auto 4px;
+  width: 24px;
+  height: 24px;
+}
+/* .hero-sub .hs-left li p{
+} */
+
+.hero-sub .hs-right{
+  float: left;
+  width: 978px;
+  margin-left: 14px;
+}
+
+.hero-sub .hs-right li{
+  float: left;
+  margin-left: 15px;
+}
+
+.hero-sub .hs-right li:first-child{
+  margin-left: 0;
+}
+
+.hero-sub .hs-right img{
+  width: 316px;
+  height: 170px;
+}
+
+
+/* hero-sub end */
+
+/* plain-box start */
+.plain-box{
+  background-color: #f5f5f5;
+}
+.plain-box .pb-top{
+  height: 58px;
+  line-height: 58px;
+
+}
+.plain-box .pbt-left{
+  float: left;
+  font-size: 22px;
+}
+.plain-box .pbt-right{
+  float: right;
+  color: #b0b0b0;
+}
+.plain-box .pbt-right span{
+  border: 1px solid #b0b0b0;
+  padding: 3px 5px;
+  margin-left: -5px;
+}
+.plain-box .pb-top .pbt-right .icon-jiantou1{
+  font-weight: lighter;
+  font-size: 14px;
+}
+.plain-box .pb-top .pbt-right .icon-jiantou{
+  font-size: 14px;
+}
+
+.plain-box .pb-bottom{
+  padding-bottom: 20px;
+}
+.plain-box .pb-bottom .pbb-left{
+  border-top: 1px solid #ef3a3b;
+  width: 234px;
+  height: 300px;
+  background-color: #f1eded;
+  float: left;
+  text-align: center;
+  padding-top: 39px;
+}
+
+.plain-box .pbb-left .round{
+  color: #ef3a3b;
+  font-size: 21px;
+  padding-top: 15px;
+}
+
+.plain-box .pbb-left img{
+  margin: 25px auto;
+}
+
+.plain-box .pbb-left .round-info{
+  font-size: 15px;
+  color: rgba( 0, 0, 0, .54);
+}
+
+.plain-box .pbb-left .timer{
+  margin-top: 28px;
+}
+
+.plain-box .pbb-left .timer div{
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  background-color: #605751;
+  color: #fff;
+  font-size: 24px;
+  display: inline-block;
+}
+
+.plain-box .pbb-left .timer i{
+  display: inline-block;
+  width: 15px;
+  height: 46px;
+  line-height: 46px;
+  color: #605751;
+  font-size: 28px;
+  font-style: normal;
+}
+
+.plain-box .pb-bottom .pbb-right{
+  width: 978px;
+  height: 340px;
+  /* background-color: blue; */
+  float: left;
+  margin-left: 14px
+}
+/* 里面内容简单用inline-block 复杂用float */
+.plain-box .pbb-right li{
+  float: left;
+  width: 234px;
+  height: 300px;
+  padding-top: 39px;
+  border-top: 1px solid #ffac13;
+  background-color: #fff;
+  margin-left: 14px;
+  text-align: center;
+}
+.plain-box .pbb-right li:first-child{
+  margin-left: 0;
+}
+
+.plain-box .pbb-right li p{
+  margin: 0 20px 3px;
+  font-size: 14px;
+  font-weight: 400;
+  /* 只能控制一行文本 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plain-box .pbb-right li .desc{
+  display: inline-block;
+  height: 18px;
+  font-size: 12px;
+  color: #b0b0b0;
+  margin: 0 20px 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plain-box .pbb-right .price{
+  font-size: 14px;
+}
+
+.plain-box .pbb-right .price span{
+  color: #ff6700;
+}
+
+.plain-box .pbb-right .price del{
+  color: #b0b0b0;
+}
+
+
+/* plain-box end */

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小米登录</title>
+  <style>
+    /* CSS reset */
+    body{
+      margin: 0;
+    }
+
+    p{
+      margin: 0;
+    }
+
+    a{
+     text-decoration: none;
+    }
+
+    li{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul{
+      margin: 0;
+    }
+
+    /* head logo start */
+    .h-panel{
+      width: 1130px;
+      height: 98px;
+      margin: 0 auto;
+    }
+
+    .h-logo{
+      height: 98px;
+      width: 200px;
+      background-image: url(https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png);
+      background-repeat: no-repeat;
+    }
+    /* head logo end */
+
+    /* login banner start */
+    .login-banner-panel{
+      height: 588px;
+      /* background-color: #1e2f40; */
+      background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2e3028877530620f50043efb01575e3d.jpg);
+      background-position: top center;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+    }
+
+    .layout{
+      min-height: 556px;
+      width: 1130px;
+      font-size: 14px;
+      margin: 0 auto;
+      /* margin: 0 auto 20px; */
+      position: relative;
+    }
+
+    .main-content{
+      min-height: 556px;
+      width: 410px;
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      bottom: -32px;
+    }
+    
+    .main-content .nav-tabs{
+      padding: 27px 0 24px;
+      text-align: center;
+    }
+
+    .main-content .nav-tabs a{
+      color: #666;
+      font-size: 24px;
+    }
+
+    .main-content .nav-tabs .zh-login{
+      color: #ff6700;
+    }
+    .main-content .nav-tabs a:hover{
+      color: #ff6700;
+    }
+
+    .main-content .nav-tabs .line{
+      width: 2px;
+      height: 24px;
+      margin: 0 35px 0 42px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .main-content .login-area{
+      color: #757575;
+      width: 348px;
+      margin: 0 auto;
+    }
+    .main-content .input-box{
+      /* background-color: purple; */
+    }
+    .main-content .pad{
+      padding: 10px 0 0 0;
+    }
+    
+    .main-content .input-box .login-user,.login-pwd{
+      margin: 0 0 14px 0;
+    }
+
+    .main-content .input-box input{
+      height: 22px;
+      width: 306px;
+      line-height: 22px;
+      padding: 13px 16px 13px 14px;
+      display: block;
+      margin: 0 auto;
+      color: #4a4a4a;
+      font-size: 100%;
+    } 
+
+    .main-content .btns-bg{
+      padding: 10px 0 0 0;
+    }
+
+    .main-content .btns-bg .login-button{
+      background-color: #ff6700;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      border: 0 none;
+      margin: 0 0 14px 0;
+    }
+
+    .main-content .sms-link a{
+      color: #ff6700;
+      margin-bottom: 30px;
+    }
+
+    .main-content .other-login{
+      float: right;
+    }
+
+    .main-content .other-login a{
+      color: #999;
+    }
+    .main-content .other-login span{
+      margin: 0 0 0 5px;
+      color: #999;
+    }
+
+    .main-content .oth-login-type .oth-login-tit{
+      padding: 10px 0 0 0;
+      border-top: 1px solid #bbb;
+      border-left: none;
+      border-bottom: none;
+      border-right: none;
+      margin: 0;
+    }
+
+    .main-content .oth-login-type .oth-typ-text{
+      text-align: center;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+
+    .main-content .oth-login-type{
+      /* background-color: purple; */
+      padding-top: 143px;
+    } 
+
+    .main-content .oth-login-type .sns-login{
+      padding: 3px 0 0 0;
+      text-align: center;
+    }
+
+    .main-content .sns-login .icon-type{
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      background-color: blue;
+      margin: 0 17px;
+      border-radius: 50%;
+    }
+
+    .main-content .sns-login .btn-sns-icontype{
+      width: 18px;
+      height: 18px;
+      background: url(https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png);
+      display: inline-block;
+      margin: 4px auto 0;
+    }
+
+    .main-content .sns-login .icon-qq{
+      background-position: -19px 0;
+    }
+
+    .main-content .sns-login .icon-weibo{
+      background-position: -38px 0;
+    }
+
+    .main-content .sns-login .icon-alipay{
+      background-position: -57px 0;
+      width: 25px;
+    }
+
+
+    .main-content .sns-login .icon-weixin{
+      background-position: -83px 0;
+      /* 为什么不论怎么改变仍旧图片不是微信 */
+      margin: 4px auto 0;
+      margin-top: 6px;
+      width: 25px; 
+    }
+
+    .main-content .sns-login .btn-qq{
+      background-color: #0288d1;
+    }
+    .main-content .sns-login .btn-weibo{
+      background-color: #d32f2f;
+    }
+    .main-content .sns-login .btn-alipay{
+      background-color: #0ae;
+    }
+    .main-content .sns-login .btn-weixin{
+      background-color: #00d20d;
+    }
+    /* 为什么不写宽度就只显示第一个图标？？？ */
+
+
+    /* login banner end */
+
+    /* footer start */
+    .footer{
+      padding: 100px 0 0 0;
+      text-align: center;
+      color: #757575;
+      font-size: 14px;
+      height: 80px;
+    }
+    .footer li{
+      display: inline-block;
+      /* color: #757575; */
+    }
+    .footer li:nth-child(1) a{
+      color: #333;
+    }
+
+    .footer li a{
+      padding: 0 10px;
+    }
+
+    .footer a{
+      color: #757575;
+    }
+
+    .footer a:hover{
+      color: #333333;
+    }
+
+    .footer p{
+      padding: 10px;
+      text-align: center;
+      /* color: #757575; */
+    }
+    /* footer end */
+  </style>
+</head>
+<body>
+  <div class="h-panel">
+    <div class="h-logo">
+    </div>
+  </div>
+  <div class="login-banner-panel">
+    <a href=""></a>
+    <div class="layout">
+      <div class="main-content">
+        <!-- 登录方式页面选择 -->
+        <div class="nav-tabs">
+          <a href="javascript:void(0)" class="zh-login">账号登录</a>
+          <span class="line"></span>
+          <a href="javascript:void(0)">扫码登录</a>
+        </div>
+        <div class="login-area">
+          <!-- 两个框 -->
+          <div class="input-box">
+            <div class="pad"><p></p></div>
+            <div class="login-user">
+              <input type="text" placeholder="邮箱/手机号码/小米ID"> 
+            </div>
+            <div class="login-pwd">
+              <input type="text"  placeholder="密码">
+            </div>
+          </div>
+          <!-- 按钮 -->
+          <div class="btns-bg">
+            <input type="submit" class="login-button" value="登录">
+          </div>
+          <!-- 其他 -->
+          <div class="other-panel">
+            <span class="sms-link"><a href="javascript:void(0)">手机短信登录/注册</a></span>
+            <div class="other-login">
+              <a href="javascript:void(0)">立即注册</a>
+              <span>|</span>
+              <a href="javascript:void(0)">忘记密码?</a>
+            </div>
+
+            <div class="oth-login-type">
+              <fieldset class="oth-login-tit">
+                <legend class="oth-typ-text">其他方式登录</legend>
+              </fieldset>
+              <div class="sns-login">
+                <a href="javascript:void(0)" class="icon-type btn-qq">
+                  <i class="btn-sns-icontype icon-qq"></i>
+                </a>
+                <a href="javascript:void(0)" class="icon-type btn-weibo">
+                  <i class="btn-sns-icontype icon-weibo"></i>
+                </a>
+                <a href="javascript:void(0)" class="icon-type btn-alipay">
+                  <i class="btn-sns-icontype icon-alipay"></i>
+                </a>
+                <a href="javascript:void(0)" class="icon-type btn-weixin">
+                  <i class="btn-sns-icontype icon-weixin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <ul>
+      <li><a href="javascript:void(0)">简体</a>|</li>
+      <li><a href="javascript:void(0)">繁体</a>|</li>
+      <li><a href="javascript:void(0)">English</a>|</li>
+      <li><a href="javascript:void(0)">常见问题</a>|</li>
+      <li><a href="javascript:void(0)">隐私政策</a></li>
+    </ul>
+    <p>小米公司版权所有-京ICP备10046444-<a href="javascript:void(0)">
+      <span><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></span>
+      京公网安备11010802020134号</a>-京ICP证110507号</p>
+  </div>
+</body>
+</html>
